@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Una Universidad Sin Violencia | CENUR Litoral Norte - Udelar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  
+
+  <style>
+
+    :root {
+
+      --primary: #5B21B6;
+
+      --primary-dark: #4C1D95;
+
+      --primary-light: #7C3AED;
+
+      --bg-light: #F5F3FF;
+
+      --surface: #FFFFFF;
+
+      --text-main: #1E293B;
+
+      --text-muted: #64748B;
+
+      --border: #E2E8F0;
+
+      
+
+      --yellow-bg: #FEF9C3;
+
+      --yellow-border: #FDE047;
+
+      --yellow-text: #854D0E;
+
+      
+
+      --orange-bg: #FFEDD5;
+
+      --orange-border: #FB923C;
+
+      --orange-text: #9A3412;
+
+      
+
+      --red-bg: #FEE2E2;
+
+      --red-border: #F87171;
+
+      --red-text: #991B1B;
+
+      --radius: 12px;
+
+      --shadow: 0 4px 6px -1px rgba(91, 33, 182, 0.08), 0 2px 4px -2px rgba(91, 33, 182, 0.05);
+
+      --shadow-hover: 0 10px 15px -3px rgba(91, 33, 182, 0.12), 0 4px 6px -4px rgba(91, 33, 182, 0.08);
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    body {
+
+      font-family: 'Inter', sans-serif;
+
+      background-color: var(--bg-light);
+
+      color: var(--text-main);
+
+      line-height: 1.6;
+
+      -webkit-font-smoothing: antialiased;
+
+    }
+
+    .container {
+
+      width: 100%;
+
+      max-width: 600px;
+
+      margin: 0 auto;
+
+      background-color: var(--surface);
+
+      min-height: 100vh;
+
+      display: flex;
+
+      flex-direction: column;
+
+      box-shadow: 0 0 25px rgba(0,0,0,0.05);
+
+    }
+
+    /* Header */
+
+    header {
+
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+
+      color: white;
+
+      padding: 28px 20px;
+
+      text-align: center;
+
+      border-bottom-left-radius: 20px;
+
+      border-bottom-right-radius: 20px;
+
+    }
+
+    .badge {
+
+      display: inline-block;
+
+      background-color: rgba(255, 255, 255, 0.18);
+
+      color: #F3E8FF;
+
+      font-size: 0.75rem;
+
+      font-weight: 600;
+
+      padding: 4px 12px;
+
+      border-radius: 50px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.8px;
+
+      margin-bottom: 12px;
+
+    }
+
+    header h1 {
+
+      font-size: 1.4rem;
+
+      font-weight: 700;
+
+      line-height: 1.25;
+
+      margin-bottom: 8px;
+
+      letter-spacing: -0.02em;
+
+    }
+
+    header p {
+
+      font-size: 0.875rem;
+
+      color: #E9D5FF;
+
+      font-weight: 400;
+
+    }
+
+    /* Main Content */
+
+    main {
+
+      padding: 20px;
+
+      flex: 1;
+
+    }
+
+    section {
+
+      margin-bottom: 28px;
+
+    }
+
+    .section-title {
+
+      font-size: 1.15rem;
+
+      color: var(--primary-dark);
+
+      font-weight: 700;
+
+      margin-bottom: 14px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+    }
+
+    .card {
+
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      padding: 16px;
+
+      box-shadow: var(--shadow);
+
+      margin-bottom: 14px;
+
+    }
+
+    .text-block p {
+
+      font-size: 0.925rem;
+
+      color: var(--text-main);
+
+      margin-bottom: 10px;
+
+    }
+
+    .text-block p:last-child {
+
+      margin-bottom: 0;
+
+    }
+
+    /* Acordeones (Mitos y Realidades) */
+
+    details {
+
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      margin-bottom: 10px;
+
+      box-shadow: var(--shadow);
+
+      overflow: hidden;
+
+      transition: all 0.2s ease;
+
+    }
+
+    details[open] {
+
+      border-color: #DDD6FE;
+
+    }
+
+    summary {
+
+      padding: 14px 16px;
+
+      font-weight: 600;
+
+      font-size: 0.9rem;
+
+      color: var(--primary-dark);
+
+      cursor: pointer;
+
+      list-style: none;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      user-select: none;
+
+    }
+
+    summary::-webkit-details-marker {
+
+      display: none;
+
+    }
+
+    summary::after {
+
+      content: '+';
+
+      font-size: 1.2rem;
+
+      color: var(--primary-light);
+
+      font-weight: 400;
+
+      transition: transform 0.2s;
+
+    }
+
+    details[open] summary::after {
+
+      content: '−';
+
+    }
+
+    .accordion-content {
+
+      padding: 0 16px 14px 16px;
+
+      font-size: 0.875rem;
+
+      color: #334155;
+
+      border-top: 1px solid #F1F5F9;
+
+      padding-top: 10px;
+
+      background-color: #FAF5FF;
+
+    }
+
+    /* Listas de alertas */
+
+    .alert-list {
+
+      list-style: none;
+
+    }
+
+    .alert-list li {
+
+      position: relative;
+
+      padding-left: 24px;
+
+      margin-bottom: 8px;
+
+      font-size: 0.875rem;
+
+      color: var(--text-main);
+
+    }
+
+    .alert-list li::before {
+
+      content: "•";
+
+      color: var(--primary-light);
+
+      font-size: 1.5rem;
+
+      position: absolute;
+
+      left: 6px;
+
+      top: -6px;
+
+    }
+
+    /* Violentometro Tabs */
+
+    .v-tabs {
+
+      display: flex;
+
+      gap: 6px;
+
+      margin-bottom: 12px;
+
+    }
+
+    .v-tab-btn {
+
+      flex: 1;
+
+      padding: 10px 4px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      font-size: 0.8rem;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      text-align: center;
+
+      opacity: 0.7;
+
+      transition: all 0.2s;
+
+    }
+
+    .v-tab-btn.active {
+
+      opacity: 1;
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    }
+
+    .v-btn-yellow { background-color: var(--yellow-bg); color: var(--yellow-text); border: 1px solid var(--yellow-border); }
+
+    .v-btn-orange { background-color: var(--orange-bg); color: var(--orange-text); border: 1px solid var(--orange-border); }
+
+    .v-btn-red { background-color: var(--red-bg); color: var(--red-text); border: 1px solid var(--red-border); }
+
+    .v-panel {
+
+      display: none;
+
+      border-radius: var(--radius);
+
+      padding: 16px;
+
+      border: 1px solid transparent;
+
+    }
+
+    .v-panel.active {
+
+      display: block;
+
+    }
+
+    .v-panel-yellow { background-color: var(--yellow-bg); border-color: var(--yellow-border); color: var(--yellow-text); }
+
+    .v-panel-orange { background-color: var(--orange-bg); border-color: var(--orange-border); color: var(--orange-text); }
+
+    .v-panel-red { background-color: var(--red-bg); border-color: var(--red-border); color: var(--red-text); }
+
+    .v-panel h3 {
+
+      font-size: 0.95rem;
+
+      font-weight: 700;
+
+      margin-bottom: 8px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.5px;
+
+    }
+
+    .v-panel ul {
+
+      padding-left: 18px;
+
+      font-size: 0.85rem;
+
+    }
+
+    .v-panel li {
+
+      margin-bottom: 4px;
+
+    }
+
+    /* Contact Buttons */
+
+    .contact-btn {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      width: 100%;
+
+      padding: 12px 16px;
+
+      margin-bottom: 10px;
+
+      border-radius: var(--radius);
+
+      text-decoration: none;
+
+      font-weight: 600;
+
+      font-size: 0.875rem;
+
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+      box-shadow: var(--shadow);
+
+    }
+
+    .contact-btn:active {
+
+      transform: scale(0.98);
+
+    }
+
+    .btn-email {
+
+      background-color: #F3E8FF;
+
+      color: var(--primary-dark);
+
+      border: 1px solid #DDD6FE;
+
+    }
+
+    .btn-phone {
+
+      background-color: #10B981;
+
+      color: white;
+
+      border: none;
+
+    }
+
+    .btn-emergency {
+
+      background-color: #EF4444;
+
+      color: white;
+
+      border: none;
+
+    }
+
+    .btn-subtext {
+
+      display: block;
+
+      font-size: 0.75rem;
+
+      font-weight: 400;
+
+      opacity: 0.85;
+
+    }
+
+    /* Footer */
+
+    footer {
+
+      background-color: #0F172A;
+
+      color: #94A3B8;
+
+      text-align: center;
+
+      padding: 24px 20px;
+
+      font-size: 0.775rem;
+
+      border-top: 1px solid #1E293B;
+
+    }
+
+    footer p {
+
+      margin-bottom: 6px;
+
+    }
+
+    footer strong {
+
+      color: #E2E8F0;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    
+
+    <!-- Encabezado Institucional -->
+
+    <header>
+
+      <span class="badge">Udelar Institucional</span>
+
+      <h1>UNA UNIVERSIDAD<br>SIN VIOLENCIA</h1>
+
+      <p>CENUR Litoral Norte (Paysandú) | Facultad de Psicología</p>
+
+    </header>
+
+    <main>
+
+      <!-- Presentación -->
+
+      <section>
+
+        <h2 class="section-title">Presentación</h2>
+
+        <div class="card text-block">
+
+          <p>La Universidad de la República asume el compromiso de garantizar un espacio educativo y laboral libre de violencias, acoso y discriminación.</p>
+
+          <p>Esta plataforma digital busca brindar herramientas de prevención, identificación oportuna de conductas de riesgo y canales directos de orientación y denuncia.</p>
+
+        </div>
+
+      </section>
+
+      <!-- ¿Qué es la violencia? -->
+
+      <section>
+
+        <h2 class="section-title">¿Qué es la Violencia?</h2>
+
+        <div class="card text-block">
+
+          <p>Se entiende por violencia toda conducta, acción u omisión basada en el género o en relaciones de poder, que cause daño físico, psicológico, sexual, patrimonial o institucional a cualquier integrante de la comunidad universitaria.</p>
+
+        </div>
+
+      </section>
+
+      <!-- Mitos y Realidades -->
+
+      <section>
+
+        <h2 class="section-title">Mitos y Realidades</h2>
+
+        
+
+        <details>
+
+          <summary>Mito: "Si no hay agresión física, no es violencia"</summary>
+
+          <div class="accordion-content">
+
+            <strong>Realidad:</strong> La violencia psicológica, verbal, económica y el acoso sexual o laboral generan graves daños emocionales e institucionales sin necesidad de llegar a la fuerza física.
+
+          </div>
+
+        </details>
+
+        <details>
+
+          <summary>Mito: "Fue solo una broma o un comentario sin intención"</summary>
+
+          <div class="accordion-content">
+
+            <strong>Realidad:</strong> El impacto de la acción sobre la víctima es lo que define el acoso o violencia, no la supuesta intención de quien ejerce la conducta.
+
+          </div>
+
+        </details>
+
+        <details>
+
+          <summary>Mito: "Denunciar no sirve para nada"</summary>
+
+          <div class="accordion-content">
+
+            <strong>Realidad:</strong> La Udelar cuenta con protocolos institucionales vigentes que protegen la confidencialidad, otorgan medidas cautelares y garantizan el debido proceso.
+
+          </div>
+
+        </details>
+
+      </section>
+
+      <!-- Tipos de Violencia y Señales -->
+
+      <section>
+
+        <h2 class="section-title">Tipos de Violencia y Señales</h2>
+
+        <div class="card">
+
+          <ul class="alert-list">
+
+            <li><strong>Acoso Sexual:</strong> Comentarios fuera de lugar, insistencia no deseada, chantaje implícito o explícito sobre la trayectoria académica/laboral.</li>
+
+            <li><strong>Acoso Laboral / Docente:</strong> Descalificación sistemática, aislamiento, asignación de tareas humillantes o sobrecarga arbitraria.</li>
+
+            <li><strong>Violencia Digital:</strong> Hostigamiento a través de redes sociales, difusión no consensuada de imágenes o mensajes privados.</li>
+
+          </ul>
+
+        </div>
+
+      </section>
+
+      <!-- Violentómetro -->
+
+      <section>
+
+        <h2 class="section-title">Violentómetro Interactivos</h2>
+
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">Selecciona cada nivel para identificar las señales de alerta:</p>
+
+        <div class="v-tabs">
+
+          <button class="v-tab-btn v-btn-yellow active" onclick="switchTab('tab1')">1. ¡ALERTA!</button>
+
+          <button class="v-tab-btn v-btn-orange" onclick="switchTab('tab2')">2. REACCIONA</button>
+
+          <button class="v-tab-btn v-btn-red" onclick="switchTab('tab3')">3. URGENTE</button>
+
+        </div>
+
+        <div id="tab1" class="v-panel v-panel-yellow active">
+
+          <h3>Nivel 1: ¡Ten Cuidado!</h3>
+
+          <ul>
+
+            <li>Bromas hirientes o pesadas constantes.</li>
+
+            <li>Chantaes emocionales o manipulación.</li>
+
+            <li>Ignorar o aplicar la "ley del hielo".</li>
+
+            <li>Descalificar opiniones en espacios de clase/trabajo.</li>
+
+          </ul>
+
+        </div>
+
+        <div id="tab2" class="v-panel v-panel-orange">
+
+          <h3>Nivel 2: ¡Reacciona!</h3>
+
+          <ul>
+
+            <li>Humillar o ridiculizar en público o redes.</li>
+
+            <li>Controlar o vigilar tus horarios e interacciones.</li>
+
+            <li>Intimidar, amenazar u ofender verbalmente.</li>
+
+            <li>Contacto físico no consensuado (manoseos, roces).</li>
+
+          </ul>
+
+        </div>
+
+        <div id="tab3" class="v-panel v-panel-red">
+
+          <h3>Nivel 3: ¡Pide Ayuda Ya!</h3>
+
+          <ul>
+
+            <li>Amenazas directas contra tu integridad o carrera.</li>
+
+            <li>Agresión física o violencia sexual.</li>
+
+            <li>Acoso constante que imposibilita estudiar o trabajar.</li>
+
+            <li>Encierro o aislamiento forzado.</li>
+
+          </ul>
+
+        </div>
+
+      </section>
+
+      <!-- ¿Qué podemos hacer? -->
+
+      <section>
+
+        <h2 class="section-title">¿Qué Podemos Hacer?</h2>
+
+        <div class="card text-block">
+
+          <p><strong>1. Escuchar y validar:</strong> Si alguien te confía una situación, no la minimices ni juzgues.</p>
+
+          <p><strong>2. Documentar:</strong> Guarda mensajes, correos o fechas de situaciones anómalas.</p>
+
+          <p><strong>3. Buscar asesoramiento:</strong> Acude a los equipos especializados para conocer tus opciones de manera confidencial.</p>
+
+        </div>
+
+      </section>
+
+      <!-- Contactos de Apoyo -->
+
+      <section>
+
+        <h2 class="section-title">Contactos de Apoyo y Denuncia</h2>
+
+        
+
+        <a href="mailto:etvad@litoralnorte.udelar.edu.uy" class="contact-btn btn-email">
+
+          <div>
+
+            ETVAD CENUR Litoral Norte
+
+            <span class="btn-subtext">etvad@litoralnorte.udelar.edu.uy</span>
+
+          </div>
+
+          <span>✉</span>
+
+        </a>
+
+        <a href="mailto:ucvad@udelar.edu.uy" class="contact-btn btn-email">
+
+          <div>
+
+            UCVAD Udelar (Central)
+
+            <span class="btn-subtext">ucvad@udelar.edu.uy</span>
+
+          </div>
+
+          <span>✉</span>
+
+        </a>
+
+        <a href="tel:08004141" class="contact-btn btn-phone">
+
+          <div>
+
+            Inmujeres (Orientación a víctimas)
+
+            <span class="btn-subtext">0800 4141 / *4141 (Gratuito)</span>
+
+          </div>
+
+          <span>📞</span>
+
+        </a>
+
+        <a href="tel:08005050" class="contact-btn btn-phone">
+
+          <div>
+
+            Línea Azul INAU
+
+            <span class="btn-subtext">0800 5050 / *5050</span>
+
+          </div>
+
+          <span>📞</span>
+
+        </a>
+
+        <a href="tel:911" class="contact-btn btn-emergency">
+
+          <div>
+
+            Emergencia Policial
+
+            <span class="btn-subtext">Llamar al 911 (Casos urgentes)</span>
+
+          </div>
+
+          <span>🚨</span>
+
+        </a>
+
+      </section>
+
+    </main>
+
+    <!-- Pie de Página Institucional -->
+
+    <footer>
+
+      <p><strong>Universidad de la República (Udelar)</strong></p>
+
+      <p>CENUR Litoral Norte - Sede Paysandú</p>
+
+      <p>Facultad de Psicología</p>
+
+      <p style="margin-top: 10px; opacity: 0.6; font-size: 0.7rem;">Compromiso institucional con el respeto y los derechos humanos.</p>
+
+    </footer>
+
+  </div>
+
+  <script>
+
+    function switchTab(tabId) {
+
+      // Ocultar todos los paneles
+
+      const panels = document.querySelectorAll('.v-panel');
+
+      panels.forEach(panel => panel.classList.remove('active'));
+
+      // Desactivar todos los botones
+
+      const buttons = document.querySelectorAll('.v-tab-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // Activar la pestaña elegida
+
+      document.getElementById(tabId).classList.add('active');
+
+      // Marcar botón activo
+
+      event.currentTarget.classList.add('active');
+
+    }
+
+  </script>
+
+</body>
+
+</html>

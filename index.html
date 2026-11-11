@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Una Universidad Sin Violencia</title>
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<title>Una Universidad Libre de Violencia</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F6F2FF;--surf:#fff;--tx:#241B3A;--mu:#6B6585;--bd:#E6DDFA;--pr:#5B21B6;--pl:#7C3AED;--soft:#EDE5FF;--mint:#DDF3E8;
@@ -66,6 +67,29 @@ details .re b{color:var(--gt)}
 .help .ic{flex:none;width:42px;height:42px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:1.2rem}
 .help b{display:block;font-size:.9rem}.help span{font-size:.78rem;color:var(--mu);display:block;line-height:1.4}.help .go{margin-left:auto;color:var(--pl);font-weight:700;font-size:.8rem}
 .help.em{background:var(--r);border-color:transparent}.help.em .ic{background:#E53535;color:#fff}.help.em b{color:var(--rt)}
+.uni{background:linear-gradient(150deg,var(--hero1),var(--hero2));color:#fff;border-radius:22px;padding:20px 16px 8px;margin:18px 0}
+.uni h3{font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.uni .lead{font-size:.82rem;opacity:.94;margin-bottom:14px}
+.ucard{display:flex;gap:14px;align-items:flex-start;background:var(--surf);color:var(--tx);border-radius:16px;padding:14px 16px;margin-bottom:12px}
+.ucard .ic{flex:none;width:42px;height:42px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:1.2rem}
+.ucard b{display:block;font-size:.92rem}
+.ucard span{display:block;font-size:.78rem;color:var(--mu);line-height:1.4;margin-bottom:4px}
+.ucard span.dato{font-size:.84rem;font-weight:600;color:var(--pr);word-break:break-word;margin:0}
+.other{font-size:.85rem;font-weight:600;color:var(--mu);margin:6px 0 10px}
+.def .defnote{font-size:.85rem;font-weight:400;color:var(--mu);padding-top:10px}
+.ice{background:var(--surf);border:1px solid var(--bd);border-radius:20px;overflow:hidden;margin-top:16px}
+.ice-top{padding:18px 18px 14px}
+.ice-top b,.ice-deep b{display:block;font-size:.8rem;font-weight:600;color:var(--mu);margin-bottom:4px}
+.ice-top p{font-size:.95rem;font-weight:600}
+.ice-btn{display:block;width:100%;border:0;border-top:1px dashed var(--pl);background:var(--soft);color:var(--pr);font:600 .88rem 'Poppins',sans-serif;padding:13px;cursor:pointer;text-align:center}
+.ice-btn:focus-visible{outline:3px solid var(--pl);outline-offset:-3px}
+.ice-deep{background:var(--soft);padding:4px 18px 18px;animation:sink .45s ease both}
+.ice-deep ul{list-style:none;font-size:.88rem}
+.ice-deep li{padding:6px 0 6px 18px;position:relative}
+.ice-deep li::before{content:"";position:absolute;left:0;top:1em;width:7px;height:7px;border-radius:50%;background:var(--pl)}
+.ice-deep p{font-size:.85rem;font-style:italic;margin-top:8px}
+@keyframes sink{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.ice-deep{animation:none}}
 footer{margin-top:40px;background:var(--hero1);color:#E9DEFF;text-align:center;padding:30px 18px;font-size:.8rem}
 footer b{color:#fff;display:block;font-size:.95rem;margin-bottom:4px}
 footer .big{font-size:1rem;font-weight:600;margin-top:14px;color:#fff}
@@ -73,7 +97,7 @@ footer .big{font-size:1rem;font-weight:600;margin-top:14px;color:#fff}
 </head>
 <body>
 <header class="hero"><div class="w">
-<h1>Una Universidad<br>Sin Violencia</h1>
+<h1>Una Universidad<br>Libre de Violencia</h1>
 <p>Somos estudiantes de Psicología del CENUR Litoral Norte (UDELAR), sede Paysandú, en el marco de nuestra práctica sobre prevención de la violencia y los abusos en el ámbito universitario. Buscamos generar conciencia, promover el diálogo y brindar información.</p>
 
 </div></header>
@@ -81,11 +105,18 @@ footer .big{font-size:1rem;font-weight:600;margin-top:14px;color:#fff}
 <main class="w">
 
 <section id="que"><h2>¿Qué es la violencia?</h2><p class="sub">Y por qué no siempre se ve.</p>
-<div class="card def">Es toda acción u omisión que causa daño físico, psicológico, sexual, económico o emocional a una persona, afectando su bienestar, dignidad y derechos.</div>
+<div class="card def">La violencia es el uso del poder —físico, emocional, económico, social o simbólico— para dañar, controlar o someter a otra persona. Puede ser una acción o una omisión, ocurrir una vez o repetirse, y afecta su integridad, su dignidad y sus derechos.<p class="defnote">Lo que la define es el daño y el abuso de poder, no la intención de quien la ejerce ni que haya golpes.</p></div>
 <p class="sub" style="margin:14px 0 0">Tocá cada tipo:</p>
 <div class="chips" id="chips"></div>
 <div class="chipinfo" id="chipinfo">Elegí un tipo de violencia para ver ejemplos.</div>
 <div class="know" style="margin-top:16px"><h3>¿Sabías que…?</h3><p>La violencia no siempre deja marcas visibles. También puede manifestarse mediante palabras, amenazas, control, humillaciones, aislamiento o manipulación, afectando la salud y el bienestar de las personas.</p></div>
+<div class="ice">
+<div class="ice-top"><b>Lo que se ve</b><p>Golpes, empujones y amenazas directas.</p></div>
+<button class="ice-btn" id="iceBtn" aria-expanded="false" aria-controls="iceDeep">Ver lo que hay debajo</button>
+<div class="ice-deep" id="iceDeep" hidden><b>Lo que no se ve</b>
+<ul><li>Chistes y comentarios que se toman como “normales”.</li><li>Estereotipos sobre lo que “le corresponde” a cada persona.</li><li>Silencios, indiferencia y exclusión.</li><li>Decidir o controlar por otra persona “por su bien”.</li><li>Jerarquías que nadie cuestiona porque “siempre fue así”.</li></ul>
+<p>Lo invisible también hace daño, y naturalizarlo es lo que le permite seguir.</p></div>
+</div>
 </section>
 
 <section id="mitos"><h2>Mitos y realidades</h2><p class="sub">Abrí cada uno.</p>
@@ -122,10 +153,13 @@ footer .big{font-size:1rem;font-weight:600;margin-top:14px;color:#fff}
 
 <section id="ayuda"><h2>Recursos ante una situación de violencia</h2>
 <div class="help em"><div class="ic">🚨</div><div><b>Emergencia inmediata: 911</b><span>Si hay peligro ahora</span></div></div>
+<div class="uni"><h3>Dentro de la Universidad</h3>
+<p class="lead">Equipos de la Udelar que atienden situaciones de violencia, acoso y discriminación. Si lo que pasó ocurrió en el ámbito universitario, empezá por acá.</p>
+<div class="ucard"><div class="ic">🏛️</div><div><b>UCVAD – Udelar (Nacional)</b><span>Ordenanza de actuación para la comunidad universitaria</span><span class="dato">udelar.edu.uy/vad/</span><span class="dato">ucvad@udelar.edu.uy</span></div></div>
+<div class="ucard"><div class="ic">✉️</div><div><b>UCVAD – CENUR Litoral Norte</b><span>Equipo de la sede Paysandú</span><span class="dato">etvad@litoralnorte.udelar.edu.uy</span></div></div></div>
+<p class="other">Otros servicios de orientación</p>
 <div class="help"><div class="ic">📞</div><div><b>Inmujeres</b><span>Atención a mujeres en situación de violencia de género</span><span><b>0800 4141 · *4141 desde celular</b></span></div></div>
 <div class="help"><div class="ic">🧒</div><div><b>Línea Azul – INAU</b><span>Denuncia de violencia hacia niños/as y adolescentes</span><span><b>0800 5050 · *5050 desde celular</b></span></div></div>
-<div class="help" href="mailto:ucvad@udelar.edu.uy"><div class="ic">🏛️</div><div><b>UCVAD – Udelar</b><span>Ordenanza de actuación para la comunidad universitaria</span> <span><b><a href="https://udelar.edu.uy/vad/">udelar.edu.uy/vad/</a> · ucvad@udelar.edu.uy</b></span></div></div>
-<div class="help" href="mailto:etvad@litoralnorte.udelar.edu.uy"><div class="ic">✉️</div><div><b>UCVAD – CENUR Litoral Norte</b><span><B>etvad@litoralnorte.udelar.edu.uy</B></span></div></div>
 </section>
 </main>
 <footer><b>Construir espacios universitarios seguros es responsabilidad de todas y todos.</b>
@@ -138,7 +172,8 @@ const T={
 "Psicológica":"Humillar, amenazar, manipular, chantaje emocional, hacerte dudar de vos.",
 "Sexual":"Tocamientos sin consentimiento, presión o forzar relaciones, difundir material íntimo.",
 "Económica":"Controlar el dinero, privar de recursos, usar la plata para dominar.",
-"Verbal":"Insultos, gritos, burlas, descalificaciones, expresiones ofensivas."};
+"Verbal":"Insultos, gritos, burlas, descalificaciones, expresiones ofensivas.",
+"Simbólica":"Mensajes, estereotipos y costumbres que hacen parecer natural una desigualdad: “esa carrera no es para vos”, “así son las cosas”. No se ve como una agresión, pero marca lo que cada persona “puede” o “debe” ser."};
 const chips=document.getElementById('chips'),info=document.getElementById('chipinfo');
 Object.keys(T).forEach(k=>{const b=document.createElement('button');b.className='chip';b.textContent=k;b.setAttribute('aria-pressed','false');
 b.onclick=()=>{chips.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');info.textContent=T[k]};chips.appendChild(b)});
@@ -159,6 +194,8 @@ const Q=[
 const qs=document.getElementById('qs');
 Q.forEach(q=>{const d=document.createElement('div');d.className='card q';d.innerHTML='<div class="sit">'+q[0]+'</div><button>Ver respuesta</button><div class="ans">'+q[1]+'</div>';
 d.querySelector('button').onclick=()=>d.classList.add('open');qs.appendChild(d)});
+const iceBtn=document.getElementById('iceBtn'),iceDeep=document.getElementById('iceDeep');
+iceBtn.onclick=()=>{const abrir=iceDeep.hidden;iceDeep.hidden=!abrir;iceBtn.setAttribute('aria-expanded',abrir);iceBtn.textContent=abrir?'Volver a la superficie':'Ver lo que hay debajo'};
 </script>
 </body>
 </html>
